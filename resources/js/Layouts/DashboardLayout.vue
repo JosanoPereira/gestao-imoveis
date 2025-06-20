@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="dashboard-layout">
+    <div>
         <SideBar/>
         <div class="wrapper d-flex flex-column min-vh-100">
             <NavBar/>
@@ -23,7 +23,5 @@ export default {
 </template>
 
 <style scoped>
-.dashboard-layout {
-    min-height: 100vh;
-}
+
 </style>
