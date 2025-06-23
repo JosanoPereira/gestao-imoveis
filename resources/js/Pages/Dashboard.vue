@@ -16,7 +16,7 @@ export default {
                             <div>
                                 <div class="fs-4 fw-semibold">26K <span class="fs-6 fw-normal">(-12.4%
                         <svg class="icon">
-                          <use xlink:href="coreui/icons/sprites/free.svg#cil-arrow-bottom"></use>
+                          <use xlink:href="/coreui/icons/sprites/free.svg#cil-arrow-bottom"></use>
                         </svg>)</span></div>
                                 <div>Users</div>
                             </div>
@@ -25,7 +25,7 @@ export default {
                                         data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg class="icon">
                                         <use
-                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
@@ -45,7 +45,7 @@ export default {
                             <div>
                                 <div class="fs-4 fw-semibold">$6.200 <span class="fs-6 fw-normal">(40.9%
                         <svg class="icon">
-                          <use xlink:href="coreui/icons/sprites/free.svg#cil-arrow-top"></use>
+                          <use xlink:href="/coreui/icons/sprites/free.svg#cil-arrow-top"></use>
                         </svg>)</span></div>
                                 <div>Income</div>
                             </div>
@@ -54,7 +54,7 @@ export default {
                                         data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg class="icon">
                                         <use
-                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
@@ -74,7 +74,7 @@ export default {
                             <div>
                                 <div class="fs-4 fw-semibold">2.49% <span class="fs-6 fw-normal">(84.7%
                         <svg class="icon">
-                          <use xlink:href="coreui/icons/sprites/free.svg#cil-arrow-top"></use>
+                          <use xlink:href="/coreui/icons/sprites/free.svg#cil-arrow-top"></use>
                         </svg>)</span></div>
                                 <div>Conversion Rate</div>
                             </div>
@@ -83,7 +83,7 @@ export default {
                                         data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg class="icon">
                                         <use
-                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
@@ -103,7 +103,7 @@ export default {
                             <div>
                                 <div class="fs-4 fw-semibold">44K <span class="fs-6 fw-normal">(-23.6%
                         <svg class="icon">
-                          <use xlink:href="coreui/icons/sprites/free.svg#cil-arrow-bottom"></use>
+                          <use xlink:href="/coreui/icons/sprites/free.svg#cil-arrow-bottom"></use>
                         </svg>)</span></div>
                                 <div>Sessions</div>
                             </div>
@@ -112,7 +112,7 @@ export default {
                                         data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg class="icon">
                                         <use
-                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
@@ -149,7 +149,7 @@ export default {
                             <button class="btn btn-primary" type="button">
                                 <svg class="icon">
                                     <use
-                                        xlink:href="coreui/icons/sprites/free.svg#cil-cloud-download"></use>
+                                        xlink:href="/coreui/icons/sprites/free.svg#cil-cloud-download"></use>
                                 </svg>
                             </button>
                         </div>
@@ -439,7 +439,7 @@ export default {
                                         <div class="progress-group-header">
                                             <svg class="icon icon-lg me-2">
                                                 <use
-                                                    xlink:href="coreui/icons/sprites/free.svg#cil-user"></use>
+                                                    xlink:href="/coreui/icons/sprites/free.svg#cil-user"></use>
                                             </svg>
                                             <div>Male</div>
                                             <div class="ms-auto fw-semibold">43%</div>
@@ -456,7 +456,7 @@ export default {
                                         <div class="progress-group-header">
                                             <svg class="icon icon-lg me-2">
                                                 <use
-                                                    xlink:href="coreui/icons/sprites/free.svg#cil-user-female"></use>
+                                                    xlink:href="/coreui/icons/sprites/free.svg#cil-user-female"></use>
                                             </svg>
                                             <div>Female</div>
                                             <div class="ms-auto fw-semibold">37%</div>
@@ -552,7 +552,7 @@ export default {
                                         <th class="bg-body-secondary text-center">
                                             <svg class="icon">
                                                 <use
-                                                    xlink:href="coreui/icons/sprites/free.svg#cil-people"></use>
+                                                    xlink:href="/coreui/icons/sprites/free.svg#cil-people"></use>
                                             </svg>
                                         </th>
                                         <th class="bg-body-secondary">User</th>
@@ -613,7 +613,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a
@@ -672,7 +672,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a
@@ -731,7 +731,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a
@@ -790,7 +790,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a
@@ -849,7 +849,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a
@@ -908,7 +908,7 @@ export default {
                                                         aria-expanded="false">
                                                     <svg class="icon">
                                                         <use
-                                                            xlink:href="coreui/icons/sprites/free.svg#cil-options"></use>
+                                                            xlink:href="/coreui/icons/sprites/free.svg#cil-options"></use>
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end"><a

@@ -40,7 +40,7 @@ const submit = () => {
                     <div class="">
                         <div class="input-group mb-3"><span class="input-group-text">
                       <svg class="icon">
-                        <use xlink:href="coreui/icons/sprites/free.svg#cil-user"></use>
+                        <use xlink:href="/coreui/icons/sprites/free.svg#cil-user"></use>
                       </svg></span>
                             <input class="form-control" type="email" v-model="form.email" required autofocus
                                    placeholder="Email">
@@ -51,7 +51,7 @@ const submit = () => {
                     <div class="">
                         <div class="input-group mb-4"><span class="input-group-text">
                       <svg class="icon">
-                        <use xlink:href="coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                        <use xlink:href="/coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                       </svg></span>
                             <input class="form-control" type="password" placeholder="Password" v-model="form.password"
                                    required

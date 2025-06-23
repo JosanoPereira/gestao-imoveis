@@ -3,7 +3,6 @@ import {ref} from 'vue'
 import SideBar from "@/Components/SideBar.vue";
 import NavBar from "@/Components/NavBar.vue";
 import FooterComponent from "@/Components/FooterComponent.vue";
-import {CTable} from "@coreui/vue/dist/esm/components/table/index.js";
 
 
 export default {

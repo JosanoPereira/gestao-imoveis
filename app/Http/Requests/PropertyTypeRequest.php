@@ -21,8 +21,12 @@ class PropertyTypeRequest extends FormRequest
      */
     public function rules(): array
     {
+        // Recupera o parâmetro da rota ou usa null se não estiver presente
+        $propertyTypeId = $this->route('property_type') ?? null;
+
+        // Regra de validação que garante que a validação 'unique' ignore o próprio tipo de propriedade em edição
         return [
-            'name' => 'required|string|max:255|unique:property_types,name,' . $this->route('property_type'),
+            'name' => 'required|string|max:255|unique:property_types,name,' . $propertyTypeId->id,
         ];
     }
 

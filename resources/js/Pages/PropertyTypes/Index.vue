@@ -11,7 +11,7 @@ export default {
     name: "Index",
     components: {DashboardLayout, DataTable, DataTablesCore},
     props: {
-        typologies: Object
+        propertyTypes: Object
     },
 
     data() {
@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         eliminar(id) {
-            eliminarDados(route('tipologias.destroy', id), this.$inertia)
+            eliminarDados(route('property-types.destroy', id), this.$inertia)
         },
     }
 }
@@ -29,36 +29,28 @@ export default {
 
 <template>
     <DashboardLayout>
-        <a class="mb-2 btn btn-primary" type="button" :href="route('tipologias.create')"><span>Novo</span>
+        <a class="mb-2 btn btn-primary" type="button" :href="route('property-types.create')"><span>Novo</span>
         </a>
         <DataTable class="table table-sm table-bordered">
             <thead class="head-datatable bg-gray-300" style="background: grey">
             <tr>
                 <th class="gest-bg-grey-table">ID</th>
-                <th class="gest-bg-grey-table">Tipologia</th>
-                <th class="gest-bg-grey-table">Descricao</th>
-                <th class="gest-bg-grey-table">Ativo</th>
+                <th class="gest-bg-grey-table">Tipo de Imovel</th>
                 <th class="gest-bg-grey-table">-</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="tipo in typologies" :key="tipo.id">
+            <tr v-for="tipo in propertyTypes" :key="tipo.id">
                 <td>{{ tipo.id }}</td>
-                <td>{{ tipo.tipo }}</td>
-                <td>{{ tipo.descricao }}</td>
+                <td>{{ tipo.name }}</td>
                 <td>
-                    <span class="badge" :class="tipo.ativo? 'text-bg-success':'text-bg-danger'">{{
-                            tipo.ativo ? 'Disponivel' : 'Indisponivel'
-                        }}</span>
-                </td>
-                <td>
-                    <a class="btn btn-sm btn-info mr-2" :href="`/tipologias/${tipo.id}/`">
+                    <a class="btn btn-sm btn-info mr-2" :href="`/property-types/${tipo.id}/`">
                         <i class="fa fa-eye"></i>
                     </a>
                     <a class="btn btn-sm btn-danger mr-2" @click="eliminar(tipo.id)">
                         <i class="fa fa-trash"></i>
                     </a>
-                    <a class="btn btn-sm btn-primary mr-2" :href="`/tipologias/${tipo.id}/edit/`">
+                    <a class="btn btn-sm btn-primary mr-2" :href="`/property-types/${tipo.id}/edit/`">
                         <i class="fa fa-edit"></i>
                     </a>
                 </td>

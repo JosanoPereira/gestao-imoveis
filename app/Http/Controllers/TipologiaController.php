@@ -68,7 +68,7 @@ class TipologiaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipologia $tipologia)
+    public function update(TypologyRequest $request, Tipologia $tipologia)
     {
         try {
             DB::beginTransaction();

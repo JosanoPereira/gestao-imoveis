@@ -9,10 +9,10 @@ export default {
         <div class="sidebar-header border-bottom">
             <div class="sidebar-brand">
                 <svg class="sidebar-brand-full" width="88" height="32" alt="CoreUI Logo">
-                    <use xlink:href="assets/brand/coreui.svg#full"></use>
+                    <use xlink:href="/assets/brand/coreui.svg#full"></use>
                 </svg>
                 <svg class="sidebar-brand-narrow" width="32" height="32" alt="CoreUI Logo">
-                    <use xlink:href="assets/brand/coreui.svg#signet"></use>
+                    <use xlink:href="/assets/brand/coreui.svg#signet"></use>
                 </svg>
             </div>
             <button class="btn-close d-lg-none"
@@ -25,7 +25,7 @@ export default {
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
             <li class="nav-item"><a class="nav-link" href="/dashboard">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-speedometer"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-speedometer"></use>
                 </svg>
                 Dashboard
                 <!--<span class="badge badge-sm bg-info ms-auto">NEW</span>-->
@@ -33,18 +33,18 @@ export default {
             <li class="nav-title">Dados</li>
             <li class="nav-item"><a class="nav-link" href="/tipologias">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-drop"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-drop"></use>
                 </svg>
                 Tipologias</a></li>
-            <li class="nav-item"><a class="nav-link" href="typography.html">
+            <li class="nav-item"><a class="nav-link" href="/property-types">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-pencil"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-pencil"></use>
                 </svg>
-                Typography</a></li>
+                Tipo Imoveis</a></li>
             <li class="nav-title">Components</li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-puzzle"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-puzzle"></use>
                 </svg>
                 Base</a>
                 <ul class="nav-group-items compact">
@@ -57,7 +57,7 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Calendar
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="base/cards.html"><span class="nav-icon"><span
@@ -88,7 +88,7 @@ export default {
             </li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-cursor"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-cursor"></use>
                 </svg>
                 Buttons</a>
                 <ul class="nav-group-items compact">
@@ -103,19 +103,19 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Loading Buttons
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                 </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="charts.html">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-chart-pie"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-chart-pie"></use>
                 </svg>
                 Charts</a></li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-notes"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-notes"></use>
                 </svg>
                 Forms</a>
                 <ul class="nav-group-items compact">
@@ -127,7 +127,7 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Multi Select
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"><span
@@ -138,7 +138,7 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Range Slider
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="forms/input-group.html"><span class="nav-icon"><span
@@ -149,7 +149,7 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Date Picker
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link"
@@ -160,14 +160,14 @@ export default {
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Rating
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="https://coreui.io/bootstrap/docs/forms/time-picker/"
                                             target="_blank"><span class="nav-icon"><span class="nav-icon-bullet"></span></span>
                         Time Picker
                         <svg class="icon icon-sm ms-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-external-link"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-external-link"></use>
                         </svg>
                         <span class="badge badge-sm bg-danger ms-auto">PRO</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="forms/layout.html"><span class="nav-icon"><span
@@ -178,7 +178,7 @@ export default {
             </li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-star"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-star"></use>
                 </svg>
                 Icons</a>
                 <ul class="nav-group-items compact">
@@ -193,7 +193,7 @@ export default {
             </li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-bell"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-bell"></use>
                 </svg>
                 Notifications</a>
                 <ul class="nav-group-items compact">
@@ -209,35 +209,35 @@ export default {
             </li>
             <li class="nav-item"><a class="nav-link" href="widgets.html">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-calculator"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-calculator"></use>
                 </svg>
                 Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
             <li class="nav-divider"></li>
             <li class="nav-title">Extras</li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-star"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-star"></use>
                 </svg>
                 Pages</a>
                 <ul class="nav-group-items compact">
                     <li class="nav-item"><a class="nav-link" href="login.html" target="_top">
                         <svg class="nav-icon">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-account-logout"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-account-logout"></use>
                         </svg>
                         Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html" target="_top">
                         <svg class="nav-icon">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-account-logout"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-account-logout"></use>
                         </svg>
                         Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="404.html" target="_top">
                         <svg class="nav-icon">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-bug"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-bug"></use>
                         </svg>
                         Error 404</a></li>
                     <li class="nav-item"><a class="nav-link" href="500.html" target="_top">
                         <svg class="nav-icon">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-bug"></use>
+                            <use xlink:href="/coreui/icons/sprites/free.svg#cil-bug"></use>
                         </svg>
                         Error 500</a></li>
                 </ul>
@@ -245,13 +245,13 @@ export default {
             <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/"
                                             target="_blank">
                 <svg class="nav-icon">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-description"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-description"></use>
                 </svg>
                 Docs</a></li>
             <li class="nav-item"><a class="nav-link text-primary fw-semibold"
                                     href="https://coreui.io/product/bootstrap-dashboard-template/" target="_top">
                 <svg class="nav-icon text-primary">
-                    <use xlink:href="coreui/icons/sprites/free.svg#cil-layers"></use>
+                    <use xlink:href="/coreui/icons/sprites/free.svg#cil-layers"></use>
                 </svg>
                 Try CoreUI PRO</a></li>
         </ul>
