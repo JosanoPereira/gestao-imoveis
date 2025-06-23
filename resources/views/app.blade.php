@@ -43,6 +43,14 @@
 
     <link href="chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
 
+    <style>
+        .gest-bg-grey-table{
+            background-color: #6c7577 !important;
+            text-transform: capitalize;
+            color: white;
+        }
+    </style>
+
     <!-- Scripts -->
     @routes
     @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
@@ -100,6 +108,7 @@
 <script src="chartjs/dist/js/coreui-chartjs.js"></script>
 <script src="utils/dist/umd/index.js"></script>
 <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 </script>
 </body>

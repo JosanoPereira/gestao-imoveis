@@ -1,18 +1,22 @@
 <script>
-import { ref } from 'vue'
+import {ref} from 'vue'
 import SideBar from "@/Components/SideBar.vue";
 import NavBar from "@/Components/NavBar.vue";
 import FooterComponent from "@/Components/FooterComponent.vue";
+import {CTable} from "@coreui/vue/dist/esm/components/table/index.js";
+
 
 export default {
     name: "DashboardLayout",
     components: {FooterComponent, NavBar, SideBar},
     setup() {
         const sidebarOpen = ref(true)
+
         function toggleSidebar() {
             sidebarOpen.value = !sidebarOpen.value
         }
-        return { sidebarOpen, toggleSidebar }
+
+        return {sidebarOpen, toggleSidebar}
     }
 }
 </script>
@@ -24,7 +28,7 @@ export default {
             <NavBar @toggle-sidebar="toggleSidebar"/>
             <div class="body flex-grow-1">
                 <main class="container-lg body-content">
-                    <slot />
+                    <slot/>
                 </main>
             </div>
             <FooterComponent/>

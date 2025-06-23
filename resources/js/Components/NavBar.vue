@@ -1,6 +1,40 @@
 <script>
+
+import {router} from "@inertiajs/vue3";
+import Swal from "sweetalert2";
+
 export default {
-    name: "NavBar"
+    name: "NavBar",
+
+    methods: {
+        lockAccount() {
+            console.log('Lock Account');
+            alert('Your account has been locked. Please contact support to unlock it.');
+        },
+
+        logout() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You will be logged out!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, log me out!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    router.post('/logout')
+                        .then(() => {
+                            console.log('Logged out successfully');
+                        })
+                        .catch(error => {
+                            console.error('Error logging out:', error);
+                        });
+                }
+            });
+
+        }
+    },
 }
 </script>
 
@@ -130,15 +164,17 @@ export default {
                         </svg>
                         Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="#" @click.prevent="lockAccount">
                             <svg class="icon me-2">
                                 <use xlink:href="coreui/icons/sprites/free.svg#cil-lock-locked"></use>
                             </svg>
-                            Lock Account</a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="coreui/icons/sprites/free.svg#cil-account-logout"></use>
-                        </svg>
-                        Logout</a>
+                            Lock Account</a>
+                        <a class="dropdown-item" href="#" @click.prevent="logout">
+                            <svg class="icon me-2">
+                                <use xlink:href="coreui/icons/sprites/free.svg#cil-account-logout"></use>
+                            </svg>
+                            Logout
+                        </a>
                     </div>
                 </li>
             </ul>
