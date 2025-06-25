@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->foreignId('tipo_clientes_id')->constrained();
             $table->string('nif');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

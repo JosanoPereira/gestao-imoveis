@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('provincia');
             $table->string('sigla', 20)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('municipios', function (Blueprint $table) {
@@ -28,15 +29,18 @@ return new class extends Migration {
                 ->constrained()->cascadeOnDelete();
             $table->string('municipio');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('clientes_id')->constrained()->cascadeOnDelete();
             $table->foreignId('municipios_id')
                 ->constrained()->cascadeOnDelete();
             $table->string('endereco');
             $table->string('bairro')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

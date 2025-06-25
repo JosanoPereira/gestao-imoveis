@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Contacto extends Model
+class TipoDocumento extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'contactos';
+    protected $table = 'tipo_documentos';
 
     protected $fillable = [
-        'clientes_id',
-        'telefone',
-        'email',
+        'tipo',
     ];
 }

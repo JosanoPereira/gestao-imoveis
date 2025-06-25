@@ -14,24 +14,28 @@ return new class extends Migration {
             $table->id();
             $table->string('tipo');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('tipo_documentos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('generos', function (Blueprint $table) {
             $table->id();
             $table->string('genero');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('estado_civil', function (Blueprint $table) {
             $table->id();
             $table->string('estado');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('pessoas', function (Blueprint $table) {
@@ -41,6 +45,8 @@ return new class extends Migration {
             $table->foreignId('generos_id')->constrained('generos')->cascadeOnUpdate();
             $table->foreignId('estado_civil_id')->constrained('estado_civil')->cascadeOnUpdate();
             $table->string('nacionalidade')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('empresas', function (Blueprint $table) {
@@ -50,6 +56,8 @@ return new class extends Migration {
             $table->string('tipo_empresa')->nullable();
             $table->string('responsavel')->nullable();
             $table->date('data_registo')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

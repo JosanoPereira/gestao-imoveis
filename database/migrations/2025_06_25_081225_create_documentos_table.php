@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->date('validade')->nullable();
             $table->boolean('vitalicio')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
