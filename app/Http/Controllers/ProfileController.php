@@ -35,6 +35,11 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        if ($request->hasFile('path')) {
+            $path = upload_as('users/images', $request->file('path'), 'profile-' . $request->user()->id);
+            $request->user()->path = $path; // se existir um campo 'path' na tabela users
+        }
+
         $request->user()->save();
 
         return Redirect::route('profile.edit');

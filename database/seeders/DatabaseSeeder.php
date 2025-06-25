@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TipologiaSeeder::class,
             PropertyTypeSeeder::class,
+            GeneroSeeder::class,
+            ProvinciaMunicipioSeeder::class,
+            TipoSeeder::class,
         ]);
     }
 }
