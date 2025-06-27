@@ -28,17 +28,17 @@ export default {
 </script>
 
 <template>
-    <DashboardLayout>
+    <DashboardLayout :crud-name="'Tipologias'">
         <a class="mb-2 btn btn-primary" type="button" :href="route('tipologias.create')"><span>Novo</span>
         </a>
-        <DataTable class="table table-sm table-bordered">
-            <thead class="head-datatable bg-gray-300" style="background: grey">
-            <tr>
-                <th class="gest-bg-grey-table">ID</th>
-                <th class="gest-bg-grey-table">Tipologia</th>
-                <th class="gest-bg-grey-table">Descricao</th>
-                <th class="gest-bg-grey-table">Ativo</th>
-                <th class="gest-bg-grey-table">-</th>
+        <DataTable class="table border mb-0">
+            <thead class="fw-semibold text-nowrap">
+            <tr class="align-middle">
+                <th class="bg-body-secondary">ID</th>
+                <th class="bg-body-secondary">Tipologia</th>
+                <th class="bg-body-secondary">Descricao</th>
+                <th class="bg-body-secondary">Ativo</th>
+                <th class="bg-body-secondary">-</th>
             </tr>
             </thead>
             <tbody>

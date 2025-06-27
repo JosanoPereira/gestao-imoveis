@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('tipologias', \App\Http\Controllers\TipologiaController::class);
     Route::resource('property-types', \App\Http\Controllers\PropertyTypeController::class);
+    Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
 });
 
 require __DIR__ . '/auth.php';

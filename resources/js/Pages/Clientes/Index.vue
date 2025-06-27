@@ -11,7 +11,7 @@ export default {
     name: "Index",
     components: {DashboardLayout, DataTable, DataTablesCore},
     props: {
-        propertyTypes: Object
+        clientes: Object
     },
 
     data() {
@@ -21,36 +21,42 @@ export default {
     },
     methods: {
         eliminar(id) {
-            eliminarDados(route('property-types.destroy', id), this.$inertia)
+            eliminarDados(route('clientes.destroy', id), this.$inertia)
         },
     }
 }
 </script>
 
 <template>
-    <DashboardLayout :crud-name="'Tipo de Imóveis'">
-        <a class="mb-2 btn btn-primary" type="button" :href="route('property-types.create')"><span>Novo</span>
+    <DashboardLayout crud-name="Clientes">
+        <a class="mb-2 btn btn-primary" type="button" :href="route('clientes.create')"><span>Novo</span>
         </a>
         <DataTable class="table table-sm table-bordered">
-            <thead class="head-datatable bg-gray-300" style="background: grey">
+            <thead class="fw-semibold text-nowrap">
             <tr>
                 <th class="bg-body-secondary">ID</th>
-                <th class="bg-body-secondary">Tipo de Imovel</th>
+                <th class="bg-body-secondary">Tipo de Cliente</th>
+                <th class="bg-body-secondary">Nome</th>
+                <th class="bg-body-secondary">Provincia</th>
+                <th class="bg-body-secondary">Municipio</th>
                 <th class="bg-body-secondary">-</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="tipo in propertyTypes" :key="tipo.id">
-                <td>{{ tipo.id }}</td>
-                <td>{{ tipo.name }}</td>
+            <tr v-for="dado in clientes" :key="dado.id">
+                <td>{{ dado.id }}</td>
+                <td>{{ dado.tipo }}</td>
+                <td>{{ dado.nome }}</td>
+                <td>{{ dado.provincia }}</td>
+                <td>{{ dado.municipio }}</td>
                 <td>
-                    <a class="btn btn-sm btn-info mr-2" :href="`/property-types/${tipo.id}/`">
+                    <a class="btn btn-sm btn-info mr-2" :href="`/clientes/${dado.id}/`">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger mr-2" @click="eliminar(tipo.id)">
+                    <a class="btn btn-sm btn-danger mr-2" @click="eliminar(dado.id)">
                         <i class="fa fa-trash"></i>
                     </a>
-                    <a class="btn btn-sm btn-primary mr-2" :href="`/property-types/${tipo.id}/edit/`">
+                    <a class="btn btn-sm btn-primary mr-2" :href="`/clientes/${dado.id}/edit/`">
                         <i class="fa fa-edit"></i>
                     </a>
                 </td>

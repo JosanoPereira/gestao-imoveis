@@ -8,6 +8,10 @@ import FooterComponent from "@/Components/FooterComponent.vue";
 export default {
     name: "DashboardLayout",
     components: {FooterComponent, NavBar, SideBar},
+
+    props: {
+        crudName: ''
+    },
     setup() {
         const sidebarOpen = ref(true)
 
@@ -24,7 +28,7 @@ export default {
     <div>
         <SideBar :class="{ 'sidebar-open': sidebarOpen }"/>
         <div class="wrapper d-flex flex-column min-vh-100" :class="['wrapper', { 'wrapper-shifted': sidebarOpen }]">
-            <NavBar @toggle-sidebar="toggleSidebar"/>
+            <NavBar @toggle-sidebar="toggleSidebar" :crud-name="crudName"/>
             <div class="body flex-grow-1">
                 <main class="container-lg body-content">
                     <slot/>

@@ -20,9 +20,9 @@ export default {
 </script>
 
 <template>
-    <DashboardLayout>
+    <DashboardLayout :crud-name="'Tipo de Imóveis / Verificar '">
         <div class="d-flex justify-content-between mb-4">
-            <h1 class="card-title mb-0">Tipo de Imoveis</h1>
+            <h1 class="card-title mb-0">Tipo de Imóveis</h1>
         </div>
         <form enctype="multipart/form-data">
             <BaseForm

@@ -44,9 +44,9 @@ export default {
 </script>
 
 <template>
-    <DashboardLayout>
+    <DashboardLayout :crud-name="'Tipo de Imóveis / Criar '">
         <div class="d-flex justify-content-between mb-4">
-            <h1 class="card-title mb-0">Tipo de Imoveis</h1>
+            <h1 class="card-title mb-0">Tipo de Imóveis</h1>
         </div>
         <form @submit.prevent="gravar" enctype="multipart/form-data">
             <BaseForm

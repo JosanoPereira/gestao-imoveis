@@ -62,12 +62,8 @@
 <!-- CoreUI and necessary plugins-->
 <script src="/coreui/dist/js/coreui.bundle.min.js"></script>
 <script src="/dist/simplebar.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('.select2').select2();
-    });
     const header = document.querySelector('header.header');
 
     document.addEventListener('scroll', () => {
@@ -93,14 +89,14 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        const ctx = document.getElementById('myChart');
+        /*const ctx = document.getElementById('myChart');
         if (ctx) {
             new Chart(ctx, {
                 type: 'bar',
-                data: { /* seus dados */},
-                options: { /* opções */}
+                data: { /!* seus dados *!/},
+                options: { /!* opções *!/}
             });
-        }
+        }*/
     });
 
     const themeElement = document.querySelector('[data-theme]');
@@ -109,10 +105,10 @@
     }
 </script>
 <!-- Plugins and scripts required by this view-->
-<script src="/chartjs/dist/chart.umd.js"></script>
-<script src="/chartjs/dist/js/coreui-chartjs.js"></script>
+{{--<script src="/chartjs/dist/chart.umd.js"></script>--}} {{--Charts --}}
+{{--<script src="/chartjs/dist/js/coreui-chartjs.js"></script>--}} {{--Charts --}}
 <script src="/utils/dist/umd/index.js"></script>
-<script src="/js/main.js"></script>
+{{--<script src="/js/main.js"></script>--}}{{--Charts --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 </script>

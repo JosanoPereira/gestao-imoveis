@@ -49,7 +49,7 @@ export default {
 
 
             <li class="nav-title">Contractos</li>
-            <li class="nav-item"><a class="nav-link" href="#">
+            <li class="nav-item"><a class="nav-link" href="/clientes">
                 <svg class="nav-icon">
                     <use xlink:href="/coreui/icons/sprites/free.svg#cil-notes"></use>
                 </svg>

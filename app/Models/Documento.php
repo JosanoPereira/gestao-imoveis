@@ -16,6 +16,7 @@ class Documento extends Model
     protected $fillable = [
         'clientes_id',
         'tipo_documentos_id',
+        'path',
         'numero',
         'emissao',
         'validade',

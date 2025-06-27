@@ -11,7 +11,7 @@ class Endereco extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'documentos';
+    protected $table = 'enderecos';
 
     protected $fillable = [
         'clientes_id',

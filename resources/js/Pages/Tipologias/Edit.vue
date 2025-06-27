@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-    <DashboardLayout>
+    <DashboardLayout :crud-name="'Tipologias / Editar'">
         <div class="d-flex justify-content-between mb-4">
             <h1 class="card-title mb-0">Tipologias</h1>
         </div>
