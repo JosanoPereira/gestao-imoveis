@@ -23,40 +23,43 @@ class ClienteRequest extends FormRequest
     public function rules(): array
     {
         $clienteId = $this->route('cliente'); // útil para update()
+        $clienteId = $clienteId instanceof \App\Models\Cliente ? $clienteId->id : $clienteId;
 
         return [
             'tipo_clientes_id' => 'required|in:1,2',
-            'nif' => 'required|string|max:20|unique:clientes,nif,' . $clienteId,
+            'nif' => 'required|string|max:20|unique:clientes,nif,' . $clienteId . ',id',
 
             // Pessoa Singular
-            'nome' => 'required_if:tipo_clientes_id,1|string|max:255',
+            'nome' => 'required_if:tipo_clientes_id,1|nullable|string|max:255',
             'data_nascimento' => 'nullable|date',
-            'generos_id' => 'required_if:tipo_clientes_id,1|exists:generos,id',
-            'estado_civil_id' => 'required_if:tipo_clientes_id,1|exists:estado_civil,id',
+            'generos_id' => 'required_if:tipo_clientes_id,1|nullable|exists:generos,id',
+            'estado_civil_id' => 'required_if:tipo_clientes_id,1|nullable|exists:estado_civil,id',
             'nacionalidade' => 'nullable|string|max:100',
 
             // Pessoa Coletiva
-            'nome_social' => 'required_if:tipo_clientes_id,2|string|max:255',
-            'nome_fantasia' => 'required_if:tipo_clientes_id,2|string|max:255',
-            'tipo_empresa' => 'required_if:tipo_clientes_id,2|string|max:100',
-            'responsavel' => 'required_if:tipo_clientes_id,2|string|max:255',
-            'data_registo' => 'required_if:tipo_clientes_id,2|date',
+            'nome_social' => 'required_if:tipo_clientes_id,2|nullable|string|max:255',
+            'nome_fantasia' => 'required_if:tipo_clientes_id,2|nullable|string|max:255',
+            'tipo_empresa' => 'required_if:tipo_clientes_id,2|nullable|string|max:100',
+            'responsavel' => 'required_if:tipo_clientes_id,2|nullable|string|max:255',
+            'data_registo' => 'required_if:tipo_clientes_id,2|nullable|date',
 
             // Endereço
             'municipios_id' => 'required|exists:municipios,id',
             'endereco' => 'required|string|max:255',
             'bairro' => 'nullable|string|max:255',
 
-//            // Contactos
-//            'contactos.*.telefone' => 'nullable|string|max:20',
-//            'contactos.*.email' => 'nullable|email|max:255',
-//
-//            // Documentos
-//            'documentos.*.tipo_documentos_id' => 'required|exists:tipo_documentos,id',
-//            'documentos.*.numero' => 'required|string|max:100',
-//            'documentos.*.emissao' => 'nullable|date',
-//            'documentos.*.validade' => 'nullable|date|after_or_equal:documentos.*.emissao',
-//            'documentos.*.path' => 'nullable|file|mimes:pdf,jpg,png|max:2048',
+            // Contactos
+            'contactos.*.id' => 'nullable|integer|exists:contactos,id',
+            'contactos.*.telefone' => 'nullable|string|max:20',
+            'contactos.*.email' => 'nullable|email|max:255',
+
+            // Documentos
+            'documentos.*.id' => 'nullable|integer|exists:documentos,id',
+            'documentos.*.tipo_documentos_id' => 'required|exists:tipo_documentos,id',
+            'documentos.*.numero' => 'required|string|max:100',
+            'documentos.*.emissao' => 'nullable|date',
+            'documentos.*.validade' => 'nullable|date|after_or_equal:documentos.*.emissao',
+            'documentos.*.path' => 'nullable',
         ];
     }
 
@@ -108,7 +111,7 @@ class ClienteRequest extends FormRequest
             'documentos.*.numero.required' => 'O número do documento é obrigatório.',
             'documentos.*.emissao.date' => 'A data de emissão deve ser uma data válida.',
             'documentos.*.validade.date' => 'A validade deve ser uma data válida.',
-            'documentos.*.validade.after_or_equal' => 'A validade deve ser posterior ou igual à data de emissão.',
+            'documentos.*.validade.after_or_equal' => 'A validade do documento deve ser posterior ou igual à data de emissão.',
             'documentos.*.path.file' => 'O arquivo deve ser um ficheiro válido.',
             'documentos.*.path.mimes' => 'O documento deve ser do tipo: pdf, jpg ou png.',
             'documentos.*.path.max' => 'O tamanho máximo do documento é de 2MB.',

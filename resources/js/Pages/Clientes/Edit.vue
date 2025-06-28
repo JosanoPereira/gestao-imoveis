@@ -3,6 +3,7 @@ import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import InputError from "@/Components/InputError.vue";
 import BaseForm from "@/Pages/Clientes/BaseForm.vue";
 import {toast} from "vue3-toastify";
+import Swal from "sweetalert2";
 
 export default {
     name: "Edit",
@@ -60,7 +61,8 @@ export default {
                 generos_id: this.cliente.generos_id,
                 estado_civil_id: this.cliente.estado_civil_id,
                 nacionalidade: this.cliente.nacionalidade,
-            }
+            },
+            mensagemRequest: []
         }
     },
 
@@ -76,11 +78,24 @@ export default {
                     });
 
                 },
-                onError: () => {
-                    toast('Erro Ao Alterar!!', {
-                        autoClose: 2000,
-                        pauseOnHover: true,
-                    })
+                onError: (errors) => {
+                    console.error('Erro de validação do backend:', errors);
+                    if (errors) {
+                        this.mensagemRequest = []
+                        Object.values(errors).forEach((mensagem) => {
+                            this.mensagemRequest.push(mensagem)
+                        });
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "" + this.mensagemRequest.join('\n'),
+                        });
+                    } else {
+                        toast.error('Erro ao alterar!', {
+                            autoClose: 3000,
+                            pauseOnHover: true,
+                        });
+                    }
                 }
             })
         }
