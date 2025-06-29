@@ -177,6 +177,13 @@ export default {
                     </select>
                     <InputError class="mt-1 mb-2" :message="errors['proprietarios_id']"/>
                 </div>
+                <div class="col-md-5">
+                    <label class="mb-1">Estado de Conservacao</label>
+                    <input type="text" class="form-control"
+                           v-model="form.estado_conservacao"
+                           :disabled="isDisable">
+                    <InputError class="mt-1 mb-2" :message="errors['estado_conservacao']"/>
+                </div>
             </div>
         </div>
 
