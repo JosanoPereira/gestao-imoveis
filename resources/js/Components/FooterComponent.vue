@@ -6,8 +6,8 @@ export default {
 
 <template>
     <footer class="footer px-4">
-        <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io/product/free-bootstrap-admin-template/">Bootstrap Admin Template</a> &copy; 2025 creativeLabs.</div>
-        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
+        <div> &copy; 2025 Todos os direitos reservados.</div>
+        <div class="ms-auto">Powered by&nbsp;<strong>JTech Solutions</strong></div>
     </footer>
 </template>
 

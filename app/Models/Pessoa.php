@@ -20,4 +20,19 @@ class Pessoa extends Model
         'estado_civil_id',
         'nacionalidade',
     ];
+
+    public function proprietario()
+    {
+        return $this->hasOne(Proprietario::class);
+    }
+
+    public function genero()
+    {
+        return $this->hasOne(Genero::class, 'generos_id');
+    }
+
+    public function estado_civil()
+    {
+        return $this->hasOne(EstadoCivil::class, 'estado_civil_id');
+    }
 }

@@ -6,22 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Documento extends Model
+class Imovel extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'documentos';
+    protected $table = 'imoveis';
 
     protected $fillable = [
-        'clientes_id',
-        'imoveis_id',
+        'enderecos_id',
+        'area_util',
+        'numero_compartimentos',
+        'estado_conservacao',
+        'tipologias_id',
+        'property_types_id',
         'proprietarios_id',
-        'tipo_documentos_id',
-        'path',
-        'numero',
-        'emissao',
-        'validade',
-        'vitalicio',
     ];
 }

@@ -41,7 +41,7 @@ export default {
                     <use xlink:href="/coreui/icons/sprites/free.svg#cil-room"></use>
                 </svg>
                 Tipo Imóveis</a></li>
-            <li class="nav-item"><a class="nav-link" href="/property-types">
+            <li class="nav-item"><a class="nav-link" href="/imoveis">
                 <svg class="nav-icon">
                     <use xlink:href="/coreui/icons/sprites/free.svg#cil-save"></use>
                 </svg>
