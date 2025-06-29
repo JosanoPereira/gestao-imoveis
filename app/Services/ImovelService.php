@@ -22,8 +22,6 @@ class ImovelService
         $tipoImoveis = PropertyType::all();
         $proprietarios = Proprietario::with('pessoa')->get();
 
-        dd($proprietarios->first());
-
         return [
             'municipios' => $municipios,
             'provincias' => $provincias,
