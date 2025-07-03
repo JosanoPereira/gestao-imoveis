@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ClienteService
 {
+    private $documentoService;
+    public function __construct()
+    {
+        $this->documentoService = new DocumentoService();
+    }
+
     /**
      * Sincroniza os contactos do cliente.
      */
@@ -42,43 +48,6 @@ class ClienteService
         }
     }
 
-    /**
-     * Sincroniza os documentos do cliente.
-     */
-    private function syncDocumentos(array $documentosData, int $clienteId)
-    {
-        $idsRecebidos = array_filter(array_column($documentosData, 'id'));
-
-        $documentosExistentes = Documento::where('clientes_id', $clienteId)->get();
-
-        $documentosExistentes->each(function ($documento) use ($idsRecebidos) {
-            if (!in_array($documento->id, $idsRecebidos)) {
-                // Apagar documento (e arquivo se necessário)
-                if ($documento->path && file_exists(storage_path('app/public/' . $documento->path))) {
-                    unlink(storage_path('app/public/' . $documento->path));
-                }
-                $documento->delete();
-            }
-        });
-
-        foreach ($documentosData as $dado) {
-            $documento = Documento::updateOrCreate(
-                ['id' => $dado['id'] ?? null, 'clientes_id' => $clienteId],
-                [
-                    'tipo_documentos_id' => $dado['tipo_documentos_id'],
-                    'numero' => $dado['numero'],
-                    'emissao' => $dado['emissao'] ?? null,
-                    'validade' => $dado['validade'] ?? null,
-                    'vitalicio' => empty($dado['validade']),
-                ]
-            );
-
-            if (isset($dado['path']) && is_file($dado['path'])) {
-                $path = upload_as('documentos/clientes', $dado['path'], 'documento-' . $clienteId . '-' . $documento->id);
-                $documento->update(['path' => $path]);
-            }
-        }
-    }
 
     // Pessoa Singular
     private function criarOuAtualizarPessoaSingular(array $data, ?int $id = null): Pessoa
@@ -160,7 +129,7 @@ class ClienteService
 
             // Documentos
             if (!empty($data['documentos'])) {
-                $this->syncDocumentos($data['documentos'], $cliente->id);
+                $this->documentoService->syncDocumentos($data['documentos'], ['clientes_id' => $cliente->id]);
             }
 
             DB::commit();
@@ -210,7 +179,7 @@ class ClienteService
 
             // Sincronizar documentos
             if (!empty($data['documentos'])) {
-                $this->syncDocumentos($data['documentos'], $cliente->id);
+                $this->documentoService->syncDocumentos($data['documentos'], ['clientes_id' => $cliente->id]);
             }
 
             DB::commit();

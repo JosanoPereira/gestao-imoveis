@@ -36,6 +36,12 @@ return new class extends Migration {
             $table->foreignId('imoveis_id')->nullable()->after('clientes_id')->constrained();
             $table->foreignId('proprietarios_id')->nullable()->after('imoveis_id')->constrained();
         });
+
+        Schema::table('enderecos', function (Blueprint $table) {
+            $table->foreignId('clientes_id')->nullable()->change();
+            $table->foreignId('imoveis_id')->nullable()->after('clientes_id')->constrained();
+            $table->foreignId('proprietarios_id')->nullable()->after('imoveis_id')->constrained();
+        });
     }
 
     /**
@@ -47,6 +53,12 @@ return new class extends Migration {
         Schema::dropIfExists('imoveis_imagens');
 
         Schema::table('documentos', function (Blueprint $table) {
+            $table->foreignId('clientes_id')->nullable(false)->change()->constrained();
+            $table->dropConstrainedForeignId('imoveis_id');
+            $table->dropConstrainedForeignId('proprietarios_id');
+        });
+
+        Schema::table('enderecos', function (Blueprint $table) {
             $table->foreignId('clientes_id')->nullable(false)->change()->constrained();
             $table->dropConstrainedForeignId('imoveis_id');
             $table->dropConstrainedForeignId('proprietarios_id');

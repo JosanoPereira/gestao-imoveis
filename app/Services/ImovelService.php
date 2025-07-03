@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\DB;
 
 class ImovelService
 {
+    private $documentoService;
+    public function __construct()
+    {
+        $this->documentoService = new DocumentoService();
+    }
+
     public function dataService(?Imovel $imovel = null): array
     {
         $provincias = Provincia::all();
@@ -46,5 +52,10 @@ class ImovelService
             ->get()
             ->map(function ($dado) {
             });
+    }
+
+    public function createProperty(array $data)
+    {
+        dd($data);
     }
 }

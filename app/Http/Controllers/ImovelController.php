@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Imovel;
 use App\Services\ImovelService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class ImovelController extends Controller
@@ -39,7 +40,16 @@ class ImovelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        try {
+            DB::beginTransaction();
+            $this->imovelServices->createProperty($request->all());
+            DB::commit();
+            return redirect()->route('imoveis.index')->with('sucesso', 'Imovel cadastrado com sucesso');
+        } catch (\Throwable $throwable) {
+            DB::rollBack();
+            return redirect()->back()->with('erro', 'Erro ao cadastrar Imovel');
+        }
     }
 
     /**

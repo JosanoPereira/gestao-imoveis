@@ -3,6 +3,7 @@ import InputError from "@/Components/InputError.vue";
 import InputNumber from 'primevue/inputnumber';
 import Select from 'primevue/select';
 
+
 export default {
     name: "BaseForm",
     components: {InputError, InputNumber, Select},
@@ -124,6 +125,28 @@ export default {
         removeAllDocs() {
             this.form.documentos = []
         },
+
+        removeImage(index) {
+            this.form.imagens.splice(index, 1);
+        },
+        createPreview(file) {
+            return window.URL.createObjectURL(file);
+        },
+        handleImagens(event) {
+            const novasImagens = Array.from(event.target.files);
+
+            // Impede adicionar arquivos duplicados (por nome)
+            const nomesExistentes = this.form.imagens.map(file => file.name);
+
+            novasImagens.forEach(file => {
+                if (!nomesExistentes.includes(file.name)) {
+                    this.form.imagens.push(file);
+                }
+            });
+
+            // Resetar o input para permitir selecionar a mesma imagem novamente
+            event.target.value = '';
+        }
     },
 
     created() {
@@ -191,8 +214,40 @@ export default {
         <div class="card-body mb-2">
             <div class="row">
                 <div class="col-md-12">
-
+                    <input type="file" class="form-control" multiple
+                           @change="handleImagens($event)"
+                           accept="image/*">
                     <InputError class="mt-1 mb-2" :message="errors['tipologias_id']"/>
+                </div>
+            </div>
+            <div v-if="form.imagens.length" class="mt-3">
+                <h5>Imagens Carregadas</h5>
+                <div class="row">
+                    <div
+                        class="col-md-2"
+                        v-for="(img, index) in form.imagens"
+                        :key="index"
+                    >
+                        <div class="card mb-2">
+                            <div class="card-body p-2 text-center">
+                                <img
+                                    v-if="img.type.startsWith('image/')"
+                                    :src="createPreview(img)"
+                                    class="img-fluid rounded border"
+                                    style="height:310px; width: 310px"
+                                    :alt="img.name"
+                                />
+
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-danger mt-2"
+                                    @click="removeImage(index)"
+                                >
+                                    Remover
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
