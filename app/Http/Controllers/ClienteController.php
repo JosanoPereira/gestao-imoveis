@@ -17,6 +17,7 @@ use App\Models\TipoDocumento;
 use App\Services\ClienteService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class ClienteController extends Controller
@@ -162,7 +163,8 @@ class ClienteController extends Controller
                 'tipo_documentos_id' => $doc->tipo_documentos_id,
                 'path' => $doc->path,
                 'download' => true,
-                'download_link' => asset('storage/' . $doc->path),
+//                'download_link' => asset('storage/' . $doc->path),
+                'download_link' => Storage::disk('public')->url($doc->path),
             ];
         }
 
