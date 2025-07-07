@@ -10,7 +10,7 @@ use Inertia\Inertia;
 
 class ImovelController extends Controller
 {
-    private $imovelServices;
+    private ImovelService $imovelServices;
 
     public function __construct()
     {
@@ -40,7 +40,7 @@ class ImovelController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request['area_util'] = str_replace(',', '.', str_replace('.', '', str_replace('m', '', $request->area_util)));
         try {
             DB::beginTransaction();
             $this->imovelServices->createProperty($request->all());

@@ -6,10 +6,7 @@ use App\Models\Documento;
 
 class DocumentoService
 {
-    /**
-     * Sincroniza os documentos do cliente.
-     */
-    public function syncDocumentos(array $documentosData, array $vinculos = [])
+    public function syncDocumentos(array $documentosData, array $vinculos = []): void
     {
         // Detectar tipo de vínculo (cliente, imóvel, ou proprietário)
         $clienteId = $vinculos['clientes_id'] ?? null;

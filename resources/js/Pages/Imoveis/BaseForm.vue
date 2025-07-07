@@ -2,11 +2,13 @@
 import InputError from "@/Components/InputError.vue";
 import InputNumber from 'primevue/inputnumber';
 import Select from 'primevue/select';
+import {VMoney} from 'v-money'
 
 
 export default {
     name: "BaseForm",
     components: {InputError, InputNumber, Select},
+    directives: {money: VMoney},
     props: {
         mainForm: Object,
         mainDisable: Boolean,
@@ -21,6 +23,14 @@ export default {
 
     data() {
         return {
+            money: {
+                decimal: ',',
+                thousands: '.',
+                prefix: 'm ',
+                suffix: '',
+                precision: 2,
+
+            },
             form: {
                 //Imoveis
                 area_util: "",
@@ -180,8 +190,10 @@ export default {
                 </div>
                 <div class="col-md-4">
                     <label class="mb-1">Area Util</label>
-                    <InputNumber class="form-control" v-model="form.area_util" :disabled="isDisable"
-                                 inputId="minmaxfraction" :minFractionDigits="2" :maxFractionDigits="5" fluid/>
+                    <input type="text" class="form-control"
+                           v-model="form.area_util"
+                           v-money="money"
+                           :disabled="isDisable">
                     <InputError class="mt-1 mb-2" :message="errors['area_util']"/>
                 </div>
             </div>

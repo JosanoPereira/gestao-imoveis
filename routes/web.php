@@ -25,4 +25,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('imoveis', \App\Http\Controllers\ImovelController::class);
 });
 
+Route::fallback(function () {
+    return redirect()->route('dashboard');
+});
+
 require __DIR__ . '/auth.php';

@@ -21,8 +21,8 @@ use Inertia\Inertia;
 
 class ClienteController extends Controller
 {
-    private $dados;
-    private $clienteService;
+    private array $dados;
+    private ClienteService $clienteService;
 
     public function __construct()
     {

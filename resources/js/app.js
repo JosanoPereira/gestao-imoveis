@@ -11,6 +11,7 @@ import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {createApp, h} from 'vue';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy';
 import PrimeVue from 'primevue/config';
+import money from 'v-money'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -26,7 +27,8 @@ createInertiaApp({
         app.use(plugin)
             .use(ZiggyVue)
             .use(PrimeVue)
-            .use(CoreuiVue);
+            .use(CoreuiVue)
+            .use(money, {precision: 4});
 
         Object.entries(iconSet).forEach(([key, component]) => {
             app.component(key, component);

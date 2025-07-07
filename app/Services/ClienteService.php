@@ -12,16 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class ClienteService
 {
-    private $documentoService;
+    private DocumentoService $documentoService;
+
     public function __construct()
     {
         $this->documentoService = new DocumentoService();
     }
 
-    /**
-     * Sincroniza os contactos do cliente.
-     */
-    private function syncContactos(array $contactosData, int $clienteId)
+    private function syncContactos(array $contactosData, int $clienteId): void
     {
         // IDs recebidos do front para controle
         $idsRecebidos = array_filter(array_column($contactosData, 'id'));
@@ -48,9 +46,7 @@ class ClienteService
         }
     }
 
-
-    // Pessoa Singular
-    private function criarOuAtualizarPessoaSingular(array $data, ?int $id = null): Pessoa
+    private function criarOuActualizarPessoaSingular(array $data, ?int $id = null): Pessoa
     {
         return $id
             ? tap(Pessoa::findOrFail($id))->update([
@@ -69,8 +65,7 @@ class ClienteService
             ]);
     }
 
-    // Pessoa Coletiva
-    private function criarOuAtualizarEmpresa(array $data, ?int $id = null): Empresa
+    private function criarOuActualizarEmpresa(array $data, ?int $id = null): Empresa
     {
         return $id
             ? tap(Empresa::findOrFail($id))->update([
@@ -103,9 +98,9 @@ class ClienteService
             $pessoaColetiva = null;
 
             if ($data['tipo_clientes_id'] == 1) {
-                $pessoaSingular = $this->criarOuAtualizarPessoaSingular($data);
+                $pessoaSingular = $this->criarOuActualizarPessoaSingular($data);
             } else {
-                $pessoaColetiva = $this->criarOuAtualizarEmpresa($data);
+                $pessoaColetiva = $this->criarOuActualizarEmpresa($data);
             }
 
             $cliente = Cliente::create([
@@ -150,9 +145,9 @@ class ClienteService
             $pessoaColetiva = null;
 
             if ($data['tipo_clientes_id'] == 1) {
-                $pessoaSingular = $this->criarOuAtualizarPessoaSingular($data, $cliente->pessoas_id);
+                $pessoaSingular = $this->criarOuActualizarPessoaSingular($data, $cliente->pessoas_id);
             } else {
-                $pessoaColetiva = $this->criarOuAtualizarEmpresa($data, $cliente->empresas_id);
+                $pessoaColetiva = $this->criarOuActualizarEmpresa($data, $cliente->empresas_id);
             }
 
             $cliente->update([

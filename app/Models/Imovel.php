@@ -14,7 +14,6 @@ class Imovel extends Model
     protected $table = 'imoveis';
 
     protected $fillable = [
-        'enderecos_id',
         'area_util',
         'numero_compartimentos',
         'estado_conservacao',

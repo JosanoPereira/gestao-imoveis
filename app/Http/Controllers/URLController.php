@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class URLController extends Controller
 {
-    public function municipios_by_provincias(Request $request)
+    public function municipios_by_provincias(Request $request): void
     {
         $municipios = DB::table('municipios')
             ->where('provincias_id', $request->provincias_id)->get();
