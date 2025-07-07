@@ -47,6 +47,7 @@ class ImovelService
             ->join('tipologias', 'tipologias.id', 'imoveis.tipologias_id')
             ->join('property_types', 'property_types.id', 'imoveis.property_types_id')
             ->join('enderecos', 'enderecos.imoveis_id', 'imoveis.id')
+
             ->whereNull('imoveis.deleted_at')
             ->select([
                 '*',
