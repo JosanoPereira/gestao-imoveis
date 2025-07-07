@@ -32,7 +32,7 @@ return [
         'uploads' => [
             'driver' => 'local',
             'root' => storage_path('app/uploads'),
-            'url' => env('APP_URL').'/storage/uploads',
+            'url' => env('APP_URL') . '/storage/uploads',
             'visibility' => 'public',
         ],
 
@@ -44,14 +44,24 @@ return [
             'report' => false,
         ],
 
-        'public' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
-            'visibility' => 'public',
-            'throw' => false,
-            'report' => false,
-        ],
+        'public' => env('APP_ENV') === 'production'
+            ? [
+                'driver' => 's3',
+                'key' => env('LARAVEL_CLOUD_PUBLIC_ACCESS_KEY_ID'),
+                'secret' => env('LARAVEL_CLOUD_PUBLIC_ACCESS_KEY_SECRET'),
+                'region' => env('LARAVEL_CLOUD_PUBLIC_DEFAULT_REGION', 'auto'),
+                'bucket' => env('LARAVEL_CLOUD_PUBLIC_BUCKET'),
+                'url' => env('LARAVEL_CLOUD_PUBLIC_URL'),
+                'endpoint' => env('LARAVEL_CLOUD_PUBLIC_ENDPOINT'),
+                'use_path_style_endpoint' => env('LARAVEL_CLOUD_PUBLIC_USE_PATH_STYLE_ENDPOINT', false),
+                'visibility' => 'public',
+            ]
+            : [
+                'driver' => 'local',
+                'root' => storage_path('app/public'),
+                'url' => env('APP_URL') . '/storage',
+                'visibility' => 'public',
+            ],
 
         's3' => [
             'driver' => 's3',
