@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
@@ -36,7 +35,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $user ? $request->user() : '',
                 'path' => $user ? ($request->user()->path
-                    ? Storage::disk('public')->url($request->user()->path)
+                    ? getFileLink($request->user()->path)
                     : asset('images/default-profile.png')) : '',
             ],
         ];

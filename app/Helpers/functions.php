@@ -22,3 +22,12 @@ function upload_as($dir, $file, $name)
     }
     return null;
 }
+
+function getFileLink($dir): string
+{
+    if ($dir != null && Storage::disk('public')->exists($dir)) {
+        // Retorna o link completo para o arquivo
+        return Storage::disk('public')->url($dir);
+    }
+    return '';
+}
