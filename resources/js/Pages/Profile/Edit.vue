@@ -3,7 +3,6 @@ import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import InputError from "@/Components/InputError.vue";
 import {Link} from '@inertiajs/vue3';
 import {ref} from "vue";
-import axios from "axios";
 
 
 export default {
@@ -33,26 +32,25 @@ export default {
     },
 
     methods: {
-        async updateProfile() {
+        updateProfile() {
             const formData = new FormData();
+
             formData.append('name', this.form.name);
             formData.append('email', this.form.email);
+
             if (this.form.path instanceof File) {
                 formData.append('path', this.form.path);
             }
 
-            try {
-                const response = await axios.patch(route('profile.update'), formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                });
-                console.log('Profile updated!', response.data);
-                // opcional: mostrar mensagem, resetar form, etc.
-            } catch (error) {
-                console.error('Erro ao atualizar perfil:', error);
-                // opcional: exibir erros do backend no template
-            }
+            formData.append('_method', 'PATCH'); // necessário para simular PATCH via POST
+
+            this.$inertia.post(route('profile.update'), formData, {
+                forceFormData: true,
+                onSuccess: () => console.log('Perfil atualizado com sucesso!'),
+                onError: (errors) => {
+                    console.error('Erros de validação:', errors);
+                }
+            });
         },
         updatePassword() {
             this.$inertia.put(route('password.update'), {
@@ -94,8 +92,7 @@ export default {
                     </p>
                 </header>
             </div>
-            <form @submit.prevent="updateProfile" class="mt-6 space-y-6"
-                  enctype="multipart/form-data">
+            <form @submit.prevent="updateProfile" class="mt-6 space-y-6" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -113,7 +110,7 @@ export default {
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <input type="file" class="form-control" @input="form.path = $event.target.files[0]"
-                                   accept="application/pdf">
+                                   accept="image/*">
                         </div>
                     </div>
                     <div class="row mt-3">

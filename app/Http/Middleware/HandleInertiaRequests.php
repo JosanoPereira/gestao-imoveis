@@ -33,6 +33,9 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'auth' => [
                 'user' => $request->user(),
+                'path' => $request->user()->path
+                    ? asset('storage/' . $request->user()->path)
+                    : asset('images/default-profile.png'),
             ],
         ];
     }

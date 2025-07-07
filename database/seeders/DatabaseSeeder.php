@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             GeneroSeeder::class,
             ProvinciaMunicipioSeeder::class,
             TipoSeeder::class,
+            RegimeSeeder::class,
+            FormaPagamentoSeeder::class,
         ]);
     }
 }

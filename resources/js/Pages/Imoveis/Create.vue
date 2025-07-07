@@ -49,9 +49,8 @@ export default {
 
     methods: {
         gravar() {
-            this.$inertia.post(route('imoveis.store'), {
-                ...this.form
-            }, {
+            this.$inertia.post(route('imoveis.store'), {...this.form}, {
+                forceFormData: true,
                 onSuccess: () => {
                     toast("Dados Gravados Com Sucesso!", {
                         autoClose: 2000,
@@ -65,7 +64,7 @@ export default {
                         pauseOnHover: true,
                     })
                 }
-            })
+            },)
         }
     }
 }
